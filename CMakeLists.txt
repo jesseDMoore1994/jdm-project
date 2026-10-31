@@ -6,6 +6,8 @@ project(jdm-project VERSION 1.0 LANGUAGES C)
 # Set the C standard to C11
 set(CMAKE_C_STANDARD 11)
 
+set(CMAKE_REQUIRED_LIBRARIES jdm-alloc jdm-log)
+
 option(ENABLE_ASAN "Enable Address Sanitizer" OFF)
 
 if(ENABLE_ASAN)
@@ -45,6 +47,9 @@ add_library(jdm-project STATIC ${SOURCES})
 
 # Include the header files for the jdm-project library
 target_include_directories(jdm-project PUBLIC include)
+
+# Link the jdm-log library to the jdm-alloc library
+target_link_libraries(jdm-project PRIVATE jdm-log)
 
 # Add the test executables
 add_executable(test-jdm-project tests/test-jdm-project.c)

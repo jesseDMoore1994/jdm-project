@@ -1,6 +1,8 @@
 #ifndef JDM_PROJECT_H
 #define JDM_PROJECT_H
 
-int one(void);
+#include <jdm-defs.h>
+
+u8 one(void);
 
 #endif // JDM_PROJECT_H

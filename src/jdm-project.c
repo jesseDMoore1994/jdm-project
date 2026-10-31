@@ -1,3 +1,7 @@
 #include "jdm-project.h"
+#include <jdm-log.h>
 
-int one(void) {return 1;}
+u8 one(void) {
+    JDM_LOG_INFO("In one");
+    return 1;
+}

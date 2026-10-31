@@ -5,21 +5,31 @@
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+    jdm-defs.url = "github:jesseDMoore1994/jdm-defs";
+    jdm-log.url = "github:jesseDMoore1994/jdm-log";
   };
 
-  outputs = { self, nixpkgs }: let
+  outputs = {
+    self,
+    nixpkgs,
+    jdm-defs,
+    jdm-log
+  }: let
     system = "x86_64-linux";
     pkgs = import nixpkgs { inherit system; };
+    jdm-defs-h = jdm-defs.packages.${system}.jdm-defs;
+    jdm-log-lib = jdm-log.packages.${system}.jdm-log;
+    deps = [ jdm-defs-h jdm-log-lib ];
     jdm-project = pkgs.stdenv.mkDerivation {
       pname = "jdm-project";
       version = "1.0.0";
 
       src = ./.;
 
-      buildInputs = [ pkgs.cmake ];
+      buildInputs = [ pkgs.cmake ] ++ deps;
 
       meta = with pkgs.lib; {
-        description = "Hand-rolled project library for C";
+        description = "<description>";
         license = licenses.mit;
         maintainers = with pkgs.maintainers; [ jesseDMoore1994 ];
       };
@@ -31,10 +41,10 @@
 
       src = ./.;
 
-      buildInputs = [ cmake ];
+      buildInputs = [ cmake ] ++ deps;
 
       meta = with lib; {
-        description = "Hand-rolled project library for C";
+        description = "<description>";
         license = licenses.mit;
         maintainers = with maintainers; [ jesseDMoore1994 ];
       };
@@ -44,7 +54,7 @@
 
     # setup a devShell for development
     devShells.x86_64-linux.default = with nixpkgs.legacyPackages.x86_64-linux; mkShell {
-      buildInputs = [ clang-tools cmake gcc gdb valgrind];
+      buildInputs = [ clang-tools cmake gcc gdb valgrind ] ++ deps;
       shellHook = ''
         echo "Welcome to the jdm-project development shell!"
       '';
