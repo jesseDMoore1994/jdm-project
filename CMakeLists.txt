@@ -48,8 +48,8 @@ add_library(jdm-project STATIC ${SOURCES})
 # Include the header files for the jdm-project library
 target_include_directories(jdm-project PUBLIC include)
 
-# Link the jdm-log library to the jdm-alloc library
-target_link_libraries(jdm-project PRIVATE jdm-log)
+# Link jdm-log and jdm-alloc to the jdm-project library
+target_link_libraries(jdm-project PRIVATE jdm-alloc jdm-log)
 
 # Add the test executables
 add_executable(test-jdm-project tests/test-jdm-project.c)

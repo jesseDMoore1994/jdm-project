@@ -1,5 +1,25 @@
 {
   "nodes": {
+    "jdm-alloc": {
+      "inputs": {
+        "jdm-defs": "jdm-defs",
+        "jdm-log": "jdm-log",
+        "nixpkgs": "nixpkgs_3"
+      },
+      "locked": {
+        "lastModified": 1795378146,
+        "narHash": "sha256-1aGcyY5ZrXY1kWb0xySxqQefS4MsRggt7K4EisrRZX8=",
+        "owner": "jesseDMoore1994",
+        "repo": "jdm-alloc",
+        "rev": "98163ebc6985bedf9b43d432ddc5841dd3ca2811",
+        "type": "github"
+      },
+      "original": {
+        "owner": "jesseDMoore1994",
+        "repo": "jdm-alloc",
+        "type": "github"
+      }
+    },
     "jdm-defs": {
       "inputs": {
         "nixpkgs": "nixpkgs"
@@ -18,9 +38,45 @@
         "type": "github"
       }
     },
+    "jdm-defs_2": {
+      "inputs": {
+        "nixpkgs": "nixpkgs_4"
+      },
+      "locked": {
+        "lastModified": 1793332858,
+        "narHash": "sha256-HkN5bhxBzQJI7/NrbPGUV1K0flG13yGLUhVoZyXbyoQ=",
+        "owner": "jesseDMoore1994",
+        "repo": "jdm-defs",
+        "rev": "9ca4e543f01f7430f2a05909cbeb548b51a829e5",
+        "type": "github"
+      },
+      "original": {
+        "owner": "jesseDMoore1994",
+        "repo": "jdm-defs",
+        "type": "github"
+      }
+    },
     "jdm-log": {
       "inputs": {
         "nixpkgs": "nixpkgs_2"
+      },
+      "locked": {
+        "lastModified": 1792369968,
+        "narHash": "sha256-SJm6qaq5bdGKwOMtJn1DkG2Om1T4BFMGKvROaLw0WtI=",
+        "owner": "jesseDMoore1994",
+        "repo": "jdm-log",
+        "rev": "3c7626f75fd1b994733769d89087b340903a1cc9",
+        "type": "github"
+      },
+      "original": {
+        "owner": "jesseDMoore1994",
+        "repo": "jdm-log",
+        "type": "github"
+      }
+    },
+    "jdm-log_2": {
+      "inputs": {
+        "nixpkgs": "nixpkgs_5"
       },
       "locked": {
         "lastModified": 1792369968,
@@ -70,6 +126,54 @@
     },
     "nixpkgs_3": {
       "locked": {
+        "lastModified": 1792094642,
+        "narHash": "sha256-zp8ToDMnqZcu4o4IH9pdwXFXGp7yLm/M0dEnNWnyd7I=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "fe13242281a67641c0102cdb1087f0ebe586c7df",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
+        "ref": "nixos-unstable",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "nixpkgs_4": {
+      "locked": {
+        "lastModified": 1791956154,
+        "narHash": "sha256-jBYGPi4udQ9uo4KQp9m2J0546nJVQitG15gvZSaVVAs=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "55bfb4d7437bd4e09ab7cba58a43bd68eb310044",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
+        "ref": "nixos-unstable",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "nixpkgs_5": {
+      "locked": {
+        "lastModified": 1791956154,
+        "narHash": "sha256-jBYGPi4udQ9uo4KQp9m2J0546nJVQitG15gvZSaVVAs=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "55bfb4d7437bd4e09ab7cba58a43bd68eb310044",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
+        "ref": "nixos-unstable",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "nixpkgs_6": {
+      "locked": {
         "lastModified": 1791956154,
         "narHash": "sha256-jBYGPi4udQ9uo4KQp9m2J0546nJVQitG15gvZSaVVAs=",
         "owner": "NixOS",
@@ -86,9 +190,10 @@
     },
     "root": {
       "inputs": {
-        "jdm-defs": "jdm-defs",
-        "jdm-log": "jdm-log",
-        "nixpkgs": "nixpkgs_3"
+        "jdm-alloc": "jdm-alloc",
+        "jdm-defs": "jdm-defs_2",
+        "jdm-log": "jdm-log_2",
+        "nixpkgs": "nixpkgs_6"
       }
     }
   },

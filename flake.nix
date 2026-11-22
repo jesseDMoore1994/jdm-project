@@ -5,6 +5,7 @@
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+    jdm-alloc.url = "github:jesseDMoore1994/jdm-alloc";
     jdm-defs.url = "github:jesseDMoore1994/jdm-defs";
     jdm-log.url = "github:jesseDMoore1994/jdm-log";
   };
@@ -12,14 +13,16 @@
   outputs = {
     self,
     nixpkgs,
+    jdm-alloc,
     jdm-defs,
     jdm-log
   }: let
     system = "x86_64-linux";
     pkgs = import nixpkgs { inherit system; };
+    jdm-alloc-lib = jdm-alloc.packages.${system}.jdm-alloc;
     jdm-defs-h = jdm-defs.packages.${system}.jdm-defs;
     jdm-log-lib = jdm-log.packages.${system}.jdm-log;
-    deps = [ jdm-defs-h jdm-log-lib ];
+    deps = [ jdm-alloc-lib jdm-defs-h jdm-log-lib ];
     jdm-project = pkgs.stdenv.mkDerivation {
       pname = "jdm-project";
       version = "1.0.0";
