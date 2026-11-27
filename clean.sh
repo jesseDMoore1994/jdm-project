@@ -1,2 +1,2 @@
 #!/usr/bin/env bash
-rm -rf build asan tsan ubsan
+rm -rf build asan tsan ubsan vgcore.*
